@@ -32,4 +32,13 @@ describe('python-error-help: help()', function(){
     expect(helpObj.id).to.equal(1)
     expect(helpObj.groups).to.deep.equal(["if"])
   })
+
+
+  it('should not return null & should capture do_sth()', function(){
+    var helpObj = help("Traceback (most recent call last):\n  File \"python\", line 6\n    do_sth()\n        ^\nIndentationError: expected an indented block")
+    expect(helpObj).to.not.equal(null)
+    expect(helpObj.id).to.equal(2)
+    expect(helpObj.groups).to.deep.equal(["do_sth()"])
+  })
+  
 })

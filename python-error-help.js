@@ -41,6 +41,20 @@ function help(lines){
   }
 
 
+  /*
+  Traceback (most recent call last):
+  File "python", line 6
+    doSth()
+        ^
+  IndentationError: expected an indented block
+  */
+  result = /\s+(.*)\s+.*\s+IndentationError: expected an indented block/.exec(lines)
+  if(result){
+    let response = String.raw`Looks like you forgot to indent "${result[1]}" correctly. Make sure it has the right amount of space before it.`
+    return {id: 2, response: response, groups: groups(result)}
+  }
+
+
   //no matches?
   return null
 }
