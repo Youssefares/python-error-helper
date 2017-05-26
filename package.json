@@ -4,6 +4,7 @@
   "description": "api for python error help",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "mocha tests/test_api.js tests/test_help.js"
   },
   "author": "Youssefe.fares",
