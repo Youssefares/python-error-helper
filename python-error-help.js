@@ -55,8 +55,23 @@ function help(lines){
   }
 
 
+
+  /*
+  Get last line of error and reply with something relevant to error-type
+  */
+  result = /((.*):.*)$/.exec(lines)
+  if(result){
+    let [errorMessage, errorType] = groups(result)
+
+    //if we have a good help message for this errorType, send it.
+    var pythonErrs = require('./python-built-in-errors.json')
+    if(errorType in pythonErrs){
+      return {id: -1, response: pythonErrs[errorType], groups: [errorMessage, errorType]}
+    }
+  }
+
   //no matches?
-  return null
+  return {id: -2, response: "No results found. Are you sure this is a python error message?", groups: {}}
 }
 
 //extracts & returns captured groups only from the re.exec() returned value

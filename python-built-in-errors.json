@@ -1,0 +1,5 @@
+{
+  "SyntaxError": "This type of error occurs when the python interpreter can't understand your code. The file your trying to run or a file imported in it, contains code that doesn't follow language rules.",
+  "IndentationError": "Python depends on indentation (# of spaces to the left of each line) to know where your code is and whether it's inside an if condition, loop or function.",
+  "RecursionError": "This runtime error occurs when maximum recursion depth is reached, meaning you made too many recursive calls. Make sure your recursive function doesn't run forever."
+}
