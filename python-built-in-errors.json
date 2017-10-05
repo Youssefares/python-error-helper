@@ -1,5 +1,13 @@
 {
   "SyntaxError": "This type of error occurs when the python interpreter can't understand your code. The file your trying to run or a file imported in it, contains code that doesn't follow language rules.",
   "IndentationError": "Python depends on indentation (# of spaces to the left of each line) to know where your code is and whether it's inside an if condition, loop or function.",
-  "RecursionError": "This runtime error occurs when maximum recursion depth is reached, meaning you made too many recursive calls. Make sure your recursive function doesn't run forever."
+  "TypeError": "You're trying to append to a number or divide a string. TypeErrors are raised when a function expects one type and gets another. What the heck are you doing, man?",
+  "NameError": "You're referencing a variable that you have not declared in your scope. Be careful to use 'global G' in the beginning of your scope if you're referencing a global",
+  "IndexError": "You declared a collection of size x, but you're trying to get the value at a place further than x-1",
+  "KeyError": "You're looking (probably in a dictionary) for a key that doesn't exist in it.",
+  "RecursionError": "This runtime error occurs when maximum recursion depth is reached, meaning you made too many recursive calls. Make sure your recursive function doesn't run forever.",
+  "AssertionError": "You're running a test using assert and the argument given was false (test failed)",
+  "ModuleNotFoundError": "You're importing a module that doesn't exist. Check your import statements and make sure the paths and names are correct",
+  "TabError": "You're using tabs and spaces inconsistently while indenting",
+  "ZeroDivisionError": "You're trying to divide by zero. You shouldn't"
 }
