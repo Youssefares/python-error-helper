@@ -1,6 +1,6 @@
 'use strict'
 const InvalidInputError = require('./invalid_input_error')
-
+const createIssue = require('./create_issue')
 /*help()
 ____________________________________________________
 Format:
@@ -68,6 +68,11 @@ function help(lines){
       //if we have a good help message for this errorType, send it.
       var pythonErrs = require('./python-built-in-errors.json')
       if(errorType in pythonErrs){
+        createIssue({
+          "title": `unmatched error of type ${errorType}`,
+          "body":  "**API:** no match was found for the following error message:\n\n```\n"+lines+"\n```",
+          "labels": ["matcher"]
+        })
         return resolve({id: -1, message: pythonErrs[errorType], groups: [errorMessage, errorType]})
       }
     }
