@@ -63,9 +63,12 @@ function help(lines){
     */
 
     result = /(?: File "<stdin>", line (\d), in <module>\s)*IndexError:.*index out of range/.exec(lines)
+    if(result && result[1]){
+      let message = String.raw`Looks like you're trying to access a collection (list, tuple, etc.) element, on line ${result[1]}, that's at an index > the size of collection.`
+      return resolve({id: 3, message: message, groups: groups(result)})
+    }
     if(result){
-      #TODO
-      let message = "todo"
+      let message = String.raw`Looks like you're trying to access a collection (list, tuple, etc.) element that's at an index > the size of collection.`
       return resolve({id: 3, message: message, groups: groups(result)})
     }
 
