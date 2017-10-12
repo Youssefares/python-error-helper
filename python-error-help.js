@@ -56,6 +56,19 @@ function help(lines){
       return resolve({id: 2, message: message, groups: groups(result)})
     }
 
+    /*
+    Traceback (most recent call last):
+    File "<stdin>", line 1, in <module>
+    IndexError: list assignment index out of range
+    */
+
+    result = /(?: File "<stdin>", line (\d), in <module>\s)*IndexError:.*index out of range/.exec(lines)
+    if(result){
+      #TODO
+      let message = "todo"
+      return resolve({id: 3, message: message, groups: groups(result)})
+    }
+
 
 
     /*
